@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #f7f9fc);
+    color: #222;
+}
+
+
+/* ================= WRAPPER ================= */
+.resume {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+/* ================= LOGO ================= */
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #c00000;
+    margin-bottom: 20px;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border: 1px solid #e6eaf0;
+}
+
+/* ================= SECTION TITLE ================= */
+.section-title {
+    background: #dbe5f1;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* ================= PERSONAL ================= */
+.personal {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    gap: 12px;
+    align-items: start;
+}
+
+/* NAME */
+.name {
+    grid-column: 1 / 3;
+    font-weight: bold;
+    background: #dbe5f1;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* INFO GRID */
+.personal-grid {
+    display: grid;
+    grid-template-columns: 160px 1fr 160px 1fr;
+    gap: 4px;
+}
+
+/* ITEM */
+.label {
+    background: #f5f5f5;
+    font-weight: bold;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.value {
+    padding: 8px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+/* PHOTO — САМОЕ ВАЖНОЕ */
+.photo {
+    width: 140px;
+    height: 160px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #fafafa;
+    font-weight: bold;
+    align-self: start;
+    overflow: hidden;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .personal {
+        grid-template-columns: 1fr;
+    }
+
+    .personal-grid {
+        grid-template-columns: 1fr;
+    }
+
+ 
+    .photo {
+        width: 100%;
+        height: 180px;
+    }
+}
+
+
+/* ================= EDUCATION ================= */
+.education-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 120px;
+    border: 1px solid #000;
+}
+
+.education-grid div {
+    padding: 8px;
+    border: 1px solid #000;
+}
+
+.head {
+    background: #dbe5f1;
+    font-weight: bold;
+}
+
+/* ================= SKILLS ================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.skill-block {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.skill-block h3 {
+    margin-bottom: 10px;
+    background: #dbe5f1;
+    padding: 5px;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .personal {
+        grid-template-columns: 70% 30%;
+        gap: 10px;
+    }
+        .personal-grid {
+         grid-template-columns: 1fr 1fr; 
+    }
+
+    .photo {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap:2px;
+        padding: 5px;
+    }
+    .education-grid div {
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+/* ================= EXPERIENCE ================= */
+.experience {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.job {
+    border: 1px solid #000;
+    padding: 10px;
+    background: #fff;
+}
+
+/* HEADER внутри job */
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background: #f5f5f5;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.company {
+    color: #000;
+}
+
+.period {
+    color: #555;
+}
+
+/* position */
+.position {
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+/* tasks */
+.tasks {
+    padding-left: 20px;
+}
+
+.tasks li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+    </style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <div class="logo">
+        Резюме
+    </div>
+
+    <!-- ================= PERSONAL INFO ================= -->
+    <div class="card personal">
+
+        <div class="name">
+            Бекмурзаев Бахром Бахадирович
+        </div>
+
+        <div class="personal-grid">
+
+            <div class="label">Дата рождения</div>
+            <div class="value">05.12.1989</div>
+
+            <div class="label">Место рождения</div>
+            <div class="value">г. Ташкент</div>
+
+            <div class="label">Национальность</div>
+            <div class="value">узбек</div>
+
+            <div class="label">Гражданство</div>
+            <div class="value">Узбекистан</div>
+
+
+            <div class="label">Email</div>
+            <div class="value">bek_bakhrom@mail.ru</div>
+
+            <div class="label">Телефон</div>
+            <div class="value">+998 94 649 1642</div>
+
+        </div>
+
+        <div class="photo">
+            <img src="./Profile.jpg" style="width: 100%" alt="">
+        </div>
+
+    </div>
+
+    <!-- ================= EDUCATION ================= -->
+    <div class="card">
+
+        <div class="section-title">Образование</div>
+
+        <div class="education-grid">
+
+            <div class="head">Период</div>
+            <div class="head">ВУЗ</div>
+            <div class="head">Специальность</div>
+            <div class="head">Диплом</div>
+
+            <div>2008–2012</div>
+            <div>Ташкентский Государственный Экономический Университет</div>
+            <div>Макроэкономика / Экономист</div>
+            <div>Бакалавр №617100</div>
+
+
+             <div>2015–2017</div>
+            <div>ACCA (Singapore)</div>
+            <div>Accounting</div>
+            <div>Магистр №TU799318</div>
+
+
+            <div>2018–2019</div>
+            <div>PROWEB- Курсы Программирования</div>
+            <div>WEB DEVELOPER - Javascript, React JS</div>
+            <div>
+                Сертификат об окнчании
+             </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= SKILLS ================= -->
+    <div class="card">
+
+        <div class="section-title">Навыки</div>
+
+        <div class="skills-grid">
+
+            <div class="skill-block">
+
+                <h3>Языки</h3>
+
+                <div class="row">
+                    <div>Русский</div>
+                    <div>Хорошо</div>
+                </div>
+
+                <div class="row">
+                    <div>Узбекский</div>
+                    <div>Хорошо</div>
+                </div>
+
+                <div class="row">
+                    <div>Английский</div>
+                    <div>Хорошо</div>
+                </div>
+
+            </div>
+
+            <div class="skill-block">
+
+                <h3>Программы</h3>
+
+                <p>
+                    HTML, CSS, JavaScript, React, TypeScript, Git, GitHub, Figma
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= EXPERIENCE ================= -->
+<div class="card">
+
+    <div class="section-title">Опыт работы</div>
+
+    <div class="experience">
+
+        <!-- JOB 1 -->
+        <div class="job">
+
+            <div class="job-header">
+                <div class="company">Enter Engineering</div>
+                <div class="period">2020 – по наст. время</div>
+            </div>
+
+           <div class="position"> Специалист HR, Группа по визовой поддержке и регистрации </div>
+            <p><strong>Профиль деятельности компании:</strong> Строительство, Частный бизнес</p> <br>
+            <h3>Обязанности:</h3>    
+           <ul class="tasks"> <li>Ведение кадрового делопроизводства и табеля учета рабочего времени.</li> <li>Подготовка кадровых приказов, трудовых договоров и дополнительных соглашений.</li> <li>Ведение кадрового документооборота и личных дел сотрудников.</li> <li>Оформление визовой поддержки, регистрации и разрешительных документов для иностранных сотрудников.</li> <li>Подготовка кадровой отчетности и справочной информации для руководства.</li> <li>Консультирование сотрудников по вопросам трудового законодательства и кадрового администрирования.</li> </ul>
+
+        </div>
+
+        <!-- JOB 2 (если нет — можно удалить) -->
+       
+
+      <div class="job">
+
+
+            <div class="job-header">
+            <div class="company">WellCome Tour</div>
+            <div class="period">2018 – 2020</div>
+            </div>
+
+            <div class="position">
+            Технический специалист
+            </div>
+
+            <p><strong>Профиль деятельности компании:</strong> Туристический бизнес</p><br>
+            <h3>Обязанности:</h3>    
+
+            <ul class="tasks">
+            <li>Создание и сопровождение туристических туров и информационных материалов.</li>
+            <li>Размещение и актуализация информации на корпоративном сайте.</li>
+            <li>Подготовка рекламного контента и поддержка онлайн-продвижения туристических услуг.</li>
+            <li>Техническое сопровождение веб-сайта и контроль корректной работы разделов.</li>
+            <li>Взаимодействие с клиентами и сотрудниками по организационным и техническим вопросам.</li>
+            <li>Поддержка внутренних бизнес-процессов компании и работа с документацией.</li>
+            </ul>
+
+       </div>
+
+      
+
+          <!-- JOB 2 (если нет — можно удалить) -->
+        <div class="job">
+
+
+        <div class="job-header">
+        <div class="company">O'zSanoatQurilishBank OATB</div>
+        <div class="period">14.04.2012 – 11.03.2014</div>
+        </div>
+
+        <div class="position">
+        Специалист бухгалтерии
+        </div>
+
+        <p><strong>Профиль деятельности компании:</strong> Банковская деятельность</p><br>
+            <h3>Обязанности:</h3>    
+
+        <ul class="tasks">
+        <li>Работа с финансовой и бухгалтерской документацией банка.</li>
+        <li>Подготовка, обработка и проверка внутренних банковских документов.</li>
+        <li>Поддержка ежедневных операционных процессов и административной деятельности подразделения.</li>
+        <li>Взаимодействие с клиентами банка и консультирование по текущим вопросам.</li>
+        <li>Работа с внутренними банковскими информационными системами и базами данных.</li>
+        <li>Контроль корректности оформления документов и соблюдения внутренних регламентов банка.</li>
+        </ul>
+
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<div class="card">
+    <div class="footer">
+        <h5 style="padding: 20px">Настоящим я подтверждаю достоверность предоставленной информации и не возражаю против проверки предоставленных сведений.</h5>
+        <img src="./footer.jpg" style="width: 100%" alt="">
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
